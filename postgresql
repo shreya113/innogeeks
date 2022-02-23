@@ -1,0 +1,17 @@
+select * from books
+
+update books set bookinfo = bookinfo || '{"author":"Author_1"}'
+where bookId = 1
+
+select bookid,bookinfo, bookinfo->>'author' as author from books
+
+insert into books(bookinfo) values('{"title":"Book 4","author":"Author1"}')
+insert into books(bookinfo) values('{"title":"Book 3"}')
+select '{
+"title":"iron man"
+
+
+}':: jsonb
+
+
+select '{"title":"iron man"}':: TEXT
