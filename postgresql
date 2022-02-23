@@ -15,3 +15,28 @@ select '{
 
 
 select '{"title":"iron man"}':: TEXT
+
+select m.movie_name, m.movie_length, a.first_name, a.last_name, a.actor_id,m.movie_id
+from movies m 
+inner join
+actors a
+on m.movie_id = a.actor_id
+
+select m.movie_name, m.movie_length, a.first_name, a.last_name, a.actor_id,m.movie_id
+from movies m 
+left join
+actors a
+on m.movie_id = a.actor_id
+
+select m.movie_name, m.movie_length, a.first_name, a.last_name, a.actor_id,m.movie_id
+from movies m 
+right join
+actors a
+on m.movie_id = a.actor_id
+
+select m.movie_name, m.movie_length, a.first_name, a.last_name, a.actor_id,m.movie_id
+from movies m 
+full join
+actors a
+on m.movie_id = a.actor_id
+
