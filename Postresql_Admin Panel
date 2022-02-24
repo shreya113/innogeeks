@@ -1,0 +1,44 @@
+create table employee(
+	emp_id Serial primary key,
+	emp_name varchar(100),
+	emp_quali varchar(100),
+	emp_role varchar(100)
+)
+
+create table role_audit(
+	role_audit_id serial primary key,
+	emp_id int not null,
+	emp_role varchar(100),
+	edit_date timestamp not null
+)
+
+
+
+insert into employee(emp_name,emp_quali,emp_role) values ('Raman', 'Btech', 'Software Engineer');
+insert into employee(emp_name,emp_quali,emp_role) values ('Soniya','Mtech','Product Manager');
+insert into employee(emp_name,emp_quali,emp_role) values ('Lalit','Btech','Analyst');
+
+select * from employee
+select * from role_audit
+
+--Function to monitor role update
+create or replace function fn_role_change()
+returns trigger
+language plpgsql
+as $$
+begin
+if new.emp_role <> old.emp_role then
+insert into role_audit(emp_id,emp_role,edit_date) values (old.emp_id,old.emp_role,now());
+end if;
+return new;
+end;
+$$
+
+--Trigger to monitor role update
+create trigger trigger_role_update
+before update
+on employee
+for each row 
+execute procedure fn_role_change(); 
+
+update employee set emp_role = 'Project Leader' where emp_id = 2;
