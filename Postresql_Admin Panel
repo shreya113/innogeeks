@@ -1,7 +1,6 @@
-create table employee(
+create table staff(
 	emp_id Serial primary key,
 	emp_name varchar(100),
-	emp_quali varchar(100),
 	emp_role varchar(100)
 )
 
@@ -14,11 +13,13 @@ create table role_audit(
 
 
 
-insert into employee(emp_name,emp_quali,emp_role) values ('Raman', 'Btech', 'Software Engineer');
-insert into employee(emp_name,emp_quali,emp_role) values ('Soniya','Mtech','Product Manager');
-insert into employee(emp_name,emp_quali,emp_role) values ('Lalit','Btech','Analyst');
+insert into staff(emp_name,emp_role) values ('Raman', 'Sales Engineer');
+insert into staff(emp_name,emp_role) values ('Soniya','Product Manager');
+insert into staff(emp_name,emp_role) values ('Lalit','Quality Analyst');
+insert into staff(emp_name,emp_role) values ('Raj','Salesperson');
+insert into staff(emp_name,emp_role) values ('Simran','Salesperson');
 
-select * from employee
+select * from staff
 select * from role_audit
 
 --Function to monitor role update
@@ -37,8 +38,11 @@ $$
 --Trigger to monitor role update
 create trigger trigger_role_update
 before update
-on employee
+on staff
 for each row 
 execute procedure fn_role_change(); 
 
-update employee set emp_role = 'Project Leader' where emp_id = 2;
+update staff set emp_role = 'Sales Leader' where emp_id = 2;
+
+
+
