@@ -84,6 +84,7 @@ as $$
 begin
 if new.ord_date <> old.ord_date then
 insert into order_audit(ord_date,edit_ord_date) values (old.ord_date,now());
+update product set quantity = quantity - 1 where prod_id = new.ord_id;
 end if;
 return new;
 end;
@@ -98,3 +99,14 @@ execute procedure fn_order_chk();
 
 
 update orders set ord_date = '2022-11-20' where ord_id = 2;
+
+
+--View for Final Bill
+create view final_reciept as
+select p.prod_name, p.quantity, p.quality_chk, o.ord_date, o.cus_name
+from product p
+inner join orders o
+on p.prod_id = o.ord_id;
+
+select prod_name, quantity, quality_chk, ord_date, cus_name
+from final_reciept
