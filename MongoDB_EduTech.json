@@ -66,9 +66,4 @@ db StudyMaterial
 }
 
 --Update Many--
-/* 1 */
-{
-    "acknowledged" : true,
-    "matchedCount" : 5.0,
-    "modifiedCount" : 5.0
-}
+db.StudyMaterial.updateMany({},{$set: {age: 22}})
