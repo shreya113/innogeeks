@@ -65,5 +65,8 @@ db StudyMaterial
     "s_age" : 22.0
 }
 
---Update Many--
+--Update All--
 db.StudyMaterial.updateMany({},{$set: {age: 22}})
+
+--Updating records having Course: Btech and age: 21, new coulmn is generated for s_status--
+db.StudyMaterial.updateMany({s_course: "Btech",s_age : 21},{$set: {s_number: 9369026143, s_status: "Graduate"}})
