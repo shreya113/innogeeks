@@ -1,0 +1,66 @@
+--Database Name: EduTech--
+-- Table Name: studyMaterial--
+
+--Table Creation--
+db StudyMaterial
+
+--Data Insertion--
+/* 1 */
+{
+    "_id" : ObjectId("62186e0a7951e92b6bba3b15"),
+    "s_firstName" : "Nalin",
+    "s_lastName" : "Singh",
+    "s_course" : "Btech",
+    "s_session" : "7 aug,20218-30 july,2022",
+    "s_email" : "nalin@gmail.com",
+    "s_number" : 6234343455.0,
+    "s_age" : 21.0
+}
+
+/* 2 */
+{
+    "_id" : ObjectId("62186e0a7951e92b6bba3b16"),
+    "s_firstName" : "Riya",
+    "s_lastName" : "Agarwal",
+    "s_course" : "Bsc",
+    "s_session" : "17 aug,2018-29 march,2021",
+    "s_email" : "riya@gmail.com",
+    "s_number" : 9232742342.0,
+    "s_age" : 22.0
+}
+
+/* 3 */
+{
+    "_id" : ObjectId("62186e0a7951e92b6bba3b17"),
+    "s_firstName" : "Sameer",
+    "s_lastName" : "Gupta",
+    "s_course" : "Btech",
+    "s_session" : "7 aug,20218-30 july,2022",
+    "s_email" : "sameer@gmail.com",
+    "s_number" : 346374234.0,
+    "s_age" : 22.0
+}
+
+/* 4 */
+{
+    "_id" : ObjectId("62186e0a7951e92b6bba3b18"),
+    "s_firstName" : "Saurabh",
+    "s_lastName" : "Mishra",
+    "s_course" : "Btech",
+    "s_session" : "7 aug,20218-30 july,2022",
+    "s_email" : "saurabh@gmail.com",
+    "s_number" : 46932423.0,
+    "s_age" : 21.0
+}
+
+/* 5 */
+{
+    "_id" : ObjectId("62186e0a7951e92b6bba3b19"),
+    "s_firstName" : "Amir",
+    "s_lastName" : "Sheikh",
+    "s_course" : "Bcom",
+    "s_session" : "17 aug,20218-30 sept,2021",
+    "s_email" : "amir@gmail.com",
+    "s_number" : 367669578.0,
+    "s_age" : 22.0
+}
