@@ -64,3 +64,11 @@ db StudyMaterial
     "s_number" : 367669578.0,
     "s_age" : 22.0
 }
+
+--Update Many--
+/* 1 */
+{
+    "acknowledged" : true,
+    "matchedCount" : 5.0,
+    "modifiedCount" : 5.0
+}
