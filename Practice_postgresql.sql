@@ -1,4 +1,4 @@
-JSON:
+--JSON:
 select * from books
 
 update books set bookinfo = bookinfo || '{"author":"Author_1"}'
@@ -18,7 +18,7 @@ select '{
 select '{"title":"iron man"}':: TEXT
 
 
-JOINS:
+--JOINS:
 select m.movie_name, m.movie_length, a.first_name, a.last_name, a.actor_id,m.movie_id
 from movies m 
 inner join
@@ -45,7 +45,7 @@ on m.movie_id = a.actor_id
 
 
 
-TRIGGERS:
+--TRIGGERS:
 create table player(
 	player_id serial primary key,
 	name varchar(100)
@@ -94,7 +94,7 @@ update player set name = 'mahendra singh dhoni' where player_id = 2
 
 
 
-SELF TRIGGER:
+--SELF BUILT TRIGGER:
 create table player1(
 	player_id serial primary key,
 	name varchar(100),
