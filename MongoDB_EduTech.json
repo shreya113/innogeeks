@@ -70,3 +70,6 @@ db.StudyMaterial.updateMany({},{$set: {age: 22}})
 
 --Updating records having Course: Btech and age: 21, new coulmn is generated for s_status--
 db.StudyMaterial.updateMany({s_course: "Btech",s_age : 21},{$set: {s_number: 9369026143, s_status: "Graduate"}})
+
+--Delete Many Records having s_status: "Graduate"--
+db.StudyMaterial.deleteMany({s_status : "Graduate"})
